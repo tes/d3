@@ -1,3 +1,7 @@
+import "../arrays/map";
+import "../arrays/range";
+import "scale";
+
 d3.scale.ordinal = function() {
   return d3_scale_ordinal([], {t: "range", a: [[]]});
 };
@@ -8,7 +12,7 @@ function d3_scale_ordinal(domain, ranger) {
       rangeBand;
 
   function scale(x) {
-    return range[((index.get(x) || index.set(x, domain.push(x))) - 1) % range.length];
+    return range[((index.get(x) || ranger.t === "range" && index.set(x, domain.push(x))) - 1) % range.length];
   }
 
   function steps(start, step) {

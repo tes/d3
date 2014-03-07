@@ -1,3 +1,6 @@
+import "../core/noop";
+import "../math/trigonometry";
+
 function d3_geo_pathContext(context) {
   var pointRadius = 4.5;
 
@@ -22,7 +25,7 @@ function d3_geo_pathContext(context) {
 
   function point(x, y) {
     context.moveTo(x, y);
-    context.arc(x, y, pointRadius, 0, 2 * π);
+    context.arc(x, y, pointRadius, 0, τ);
   }
 
   function pointLineStart(x, y) {

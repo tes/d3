@@ -1,3 +1,9 @@
+import "../arrays/map";
+import "../arrays/permute";
+import "../arrays/range";
+import "../core/identity";
+import "layout";
+
 // data is two-dimensional array of x,y; we populate y0
 d3.layout.stack = function() {
   var values = d3_identity,
@@ -82,7 +88,7 @@ d3.layout.stack = function() {
   };
 
   return stack;
-}
+};
 
 function d3_layout_stackX(d) {
   return d.x;
